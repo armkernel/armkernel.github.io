@@ -1,6 +1,6 @@
 ---
 layout : post
-title : 190810_TIL(Today I Learn)
+title : 190810_TIL (Today I Learn)
 tags : [TIL]
 comments: true
 ---
