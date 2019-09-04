@@ -8,6 +8,8 @@ fi
 
 echo your commit comment is $VALUE !!
 
+git pull
+
 git add .
 git commit -m $VALUE
 git push origin master
