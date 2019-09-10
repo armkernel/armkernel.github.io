@@ -14,6 +14,7 @@ echo "comments: true" >> $NAME
 echo "---" >> $NAME
 echo "### 오늘 한 일" >> $NAME
 echo "- "  >> $NAME
+echo >> $NAME
 echo "---" >> $NAME
 echo "### 백지 노트" >> $NAME
 
