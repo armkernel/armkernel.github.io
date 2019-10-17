@@ -12,7 +12,7 @@ template<typename T> void foo(T a)
 
   // 2. 변형된 타입 얻기
   typename remove_pointer<T>::type n; // type을 꺼내기 때문에 type..
-  remove_pointer<T> n2; // typename 생략가능. <- 훨씬 더 간결 하다.
+  remove_pointer_t<T> n2; // typename 생략가능. <- 훨씬 더 간결 하다.
 }
 
 int main()

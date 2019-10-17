@@ -26,6 +26,7 @@ template<typename T> T&& xmove(T&& arg)
 // decay -> const도 없애서.. 
 // 우리는 reference도 없애야함.
 // decltype(auto) 
+// move 와 forward의 차이
 template<typename T> remove_reference_t<T>&& xmove(T&& arg)
 {
   // xmove(lvalue) : T 는 int&

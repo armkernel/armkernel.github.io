@@ -25,7 +25,7 @@ int main()
   // foo(10);
   //
   chronometry(foo, 10); // &로 하면 10이 안넘어감.
-  chronometry(goo, n);
+  chronometry(goo, n); // const화 되서 const함수만 부르게됨
 
   cout << n << endl;
 }

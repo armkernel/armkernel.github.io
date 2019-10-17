@@ -17,7 +17,7 @@ public:
   // void SetData(Data&& d) { data = move(d); } // 50개가 있다면.. 다 만들어야함.
 
   // 방법2. forwarding reference 사용
-  // T&& : Data& 와 Data&&의 함수를 자동 생성 (int라고 가정)
+  // T&& : Data& 와 Data&&의 함수를 자동 생성 (Data라고 가정)
   //      const Data&
   //
   //      함수의 갯수가 많아지는 단점이 있음

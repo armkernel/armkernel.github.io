@@ -6,7 +6,7 @@
 using namespace std;
 
 // Empty 클래스 : non static member data와 가상함수가 없는 클래스
-class Empty{};
+class Empty{;
 
 int main()
 {
