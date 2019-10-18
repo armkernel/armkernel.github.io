@@ -15,7 +15,7 @@ public:
 
 int main()
 {
-  vector<Point> v;
+  //vector<Point> v;
   //Point p1;
   // Point p2(p1);
   //
@@ -23,7 +23,8 @@ int main()
 
   // point(point) ? 이건 안되나?
   //
-  Point p3((Point()));
+  Point p3{Point{}};
+
 
   // Point p3(move(p1));
   //
