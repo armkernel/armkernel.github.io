@@ -5,32 +5,31 @@ using namespace std;
 
 
 template<typename T>
-void average(T t)
+double average(T& t) 
 {
-  cout <<"vector" << endl;
+  int sz = 0;
+  double sum = 0;
+  if constexpr (is_array_v<T>){
+    sz = sizeof(t) / sizeof(typename remove_all_extents<T>::type);    
+  } 
+  else 
+  {
+    sz = t.size();
+  }
+
+  for (int i = 0; i < sz; i++){
+    sum += t[i];
+  }
+
+  return sum / sz;
 }
 
-template<typename T>
-void average(T* t) 
-{
-  cout << "int[]"<< sizeof(t) << endl;
-  
-  cout << __PRETTY_FUNCTION__ << endl;
-}
-
-/*
-template<typename T>
-// enable_if_t<is_array<T>::value, T> 
-average(T t)
-{
-  cout << typeid(T).name() << endl;
-}*/
 
 #include <vector>
 int main()
 {
-  int a[10] = { 1,2,3,4,5,6,7,8,9,10 };
-  vector<int> aa = { 1,2,3 };
-  average(aa);
-  average(a);
+  int x[10] = { 1,2,3,4,5,6,7,8,9,10 };
+  vector<int> y = { 1,2,3,4,5,6,7,8,9,10 };
+  cout << average(x) << endl;
+  cout << average(y) << endl;
 }
