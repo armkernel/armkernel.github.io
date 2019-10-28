@@ -414,6 +414,19 @@ nav {
     margin-bottom: .1em;
   }
 
+  h3,h4 {
+    border-left: $base-my-color 10px solid;
+    border-bottom: $base-my-color 3px solid;
+    color : $base-my-color;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    text-rendering: optimizelegibility;
+    margin-top: 1.5rem;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
   .date {
     font-weight: 300;
     font-size: $small-font-size;
