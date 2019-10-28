@@ -1,0 +1,60 @@
+// 1_Temporary
+// github.com/webkit
+// webkit/source/wtf/wtf/scope.h 
+//
+
+#include <iostream>
+using namespace std;
+
+class Point
+{
+public:
+  int x, y;
+
+  Point(int a = 0 , int b = 0) : x(a), y(b)
+  {
+    cout << "Point()" << endl;
+  }
+  ~Point() { cout << "~Point" << endl; }
+
+  void set(int a, int b) { x = a; y = b; }
+};
+
+
+// Temporary와 반환 타입
+
+// 1. 함수 인자
+// void foo(Point pt) {} // 복사본.
+void foo(Point& pt) {} // call by reference : 복사본 생성안됨.
+
+// 2. 함수의 반환값
+// 값을 반환한다. 
+//
+// ----
+// |pt|
+// ----
+Point pt(0,0);
+Point goo() { return pt; }
+Point& hoo() { return pt; }
+
+Point& koo()
+{
+  Point p(0,0);
+  return p; // 버그 .. 절대 지역변수의 참조를 반환하면 안됨.
+            // 블록을 나왔을 때, 지역변수 파괴..
+}
+
+int main()
+{
+  Point p;
+  foo(p); // call by value 
+          // 복사본. 
+
+  goo(); // 진짜 pt일까? no 임시객체이다. 
+  //goo()x. = 10; // compile error.
+  // 값으로 적으면, 값 리턴. : pt를 복사한 temporary반환
+  // temporay 반환하지 않으려면, &로 반환하면 됨.
+
+  hoo().x = 10;
+  cout << "------" << endl;
+}
