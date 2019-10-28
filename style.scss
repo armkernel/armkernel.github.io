@@ -537,7 +537,8 @@ nav {
     color: $base-color;
   }
   time {
-    color: $base-lighten-color;
+    //color: $base-lighten-color; 
+    color : $base-my-color;
     font-size: $small-font-size;
     font-weight: 300;
     margin-left: 3px;
