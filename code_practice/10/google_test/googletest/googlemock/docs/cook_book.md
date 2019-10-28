@@ -1427,8 +1427,6 @@ Use `Pair` when comparing maps or other associative containers.
 using testing::ElementsAre;
 using testing::Pair;
 ...
-  std::map<string, int> m = {{"a", 1}, {"b", 2}, {"c", 3}};
-  EXPECT_THAT(m, ElementsAre(Pair("a", 1), Pair("b", 2), Pair("c", 3)));
 ```
 
 **Tips:**
