@@ -21,13 +21,13 @@ avatar: https://cultofthepartyparrot.com/parrots/hd/githubparrot.gif
 # it from the list(Delete '- name: ' and 'url: ', too!)
 navigation:
   - name: Blog
-    url: /
+    url: /blog
   - name: About
     url: /about
   - name: Archive
     url: /archive
   - name: Tags
-    url: /tags
+    url: /
 
 # Pagination
 paginate: 5
