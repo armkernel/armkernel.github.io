@@ -2,7 +2,7 @@
 //
 // VARIABLES
 //
-
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);//google web font added
 // Colors
 $blue: #4183C4;
 
@@ -20,8 +20,8 @@ $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Fonts
-$base-font: 'Spoqa Han Sans', 'Source Sans Pro', 'Apple SD Gothic Neo', 'Nanum Barun Gothic', 'Nanum Gothic', 'Verdana', 'Arial', 'Dotum', sans-serif;
-$code-font: 'Menlo', 'Courier New', 'Monaco', 'Spoqa Han Sans', monospace;
+$base-font: 'Nanum Gothic Coding','Spoqa Han Sans', 'Source Sans Pro', 'Apple SD Gothic Neo', 'Nanum Barun Gothic', 'Nanum Gothic', 'Verdana', 'Arial', 'Dotum', sans-serif;
+$code-font: 'Nanum Gothic Coding','Menlo', 'Courier New', 'Monaco', 'Spoqa Han Sans', monospace;
 
 // Font sizes
 $base-font-size: 18px;
