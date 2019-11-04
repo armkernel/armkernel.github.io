@@ -14,7 +14,7 @@ DAY_LIST=(31 28 31 30 31 30 31 31 30 31 30 31)
 
 NOW_MONTH_DAY=${DAY_LIST[`expr $MONTH - 1`]}
 
-echo "$LAST_DAY $NOW_MONTH_DAY"
+#echo "$LAST_DAY $NOW_MONTH_DAY"
 
 if [ $LAST_DAY -gt $NOW_MONTH_DAY ]; then
   LAST_DAY="0`expr $LAST_DAY - $NOW_MONTH_DAY`"
@@ -28,8 +28,36 @@ fi
 
 NEW_FILE_NAME=$(date +%Y)-$(date +%m)-$(date +%d)-TIL_"$YEAR$MONTH$DAY"_"$LAST_MONTH$LAST_DAY".md
 
-echo $NEW_FILE_NAME
+touch $NEW_FILE_NAME
 
+TMP_DAY=$LAST_DAY
+TMP_MONTH=$MONTH
+IDX=1
 
+echo "---" >> $NEW_FILE_NAME
+echo "layout : post" >> $NEW_FILE_NAME
+echo "title : '[TIL] $YEAR$MONTH$DAY ~ $YEAR$LAST_MONTH$LAST_DAY'" >> $NEW_FILE_NAME
+echo "tags : [ 'TIL (Today I Learn)' ]" >> $NEW_FILE_NAME
+echo "comments: true" >> $NEW_FILE_NAME
+echo "---" >> $NEW_FILE_NAME
+
+for i in "월" "화" "수" "목" "금" "토" "일"; do
+  if [ $TMP_DAY -gt $NOW_MONTH_DAY ]; then
+    TMP_DAY="0$IDX"
+    IDX=`expr $IDX + 1`
+
+    TMP_MONTH=$LAST_MONTH
+  fi
+
+  echo "" >> $NEW_FILE_NAME
+  echo "## $TMP_MONTH 월 $TMP_DAY 일 ($i)" >> $NEW_FILE_NAME
+  echo "### 오늘 한 일" >> $NEW_FILE_NAME
+  echo "" >> $NEW_FILE_NAME
+  echo "### 백지노트" >> $NEW_FILE_NAME
+  echo "" >> $NEW_FILE_NAME
+  echo "---" >> $NEW_FILE_NAME
+
+  TMP_DAY=`expr $TMP_DAY + 1`
+done
 
 #echo "$DAY $NEXT_DAY"
