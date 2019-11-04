@@ -16,6 +16,8 @@ NOW_MONTH_DAY=${DAY_LIST[`expr $MONTH - 1`]}
 
 #echo "$LAST_DAY $NOW_MONTH_DAY"
 
+echo "Making new TIL file.. ~ing.."
+
 if [ $LAST_DAY -gt $NOW_MONTH_DAY ]; then
   LAST_DAY="0`expr $LAST_DAY - $NOW_MONTH_DAY`"
   LAST_MONTH=`expr $MONTH + 1`
@@ -30,7 +32,7 @@ NEW_FILE_NAME=$(date +%Y)-$(date +%m)-$(date +%d)-TIL_"$YEAR$MONTH$DAY"_"$LAST_M
 
 touch $NEW_FILE_NAME
 
-TMP_DAY=$LAST_DAY
+TMP_DAY=$DAY
 TMP_MONTH=$MONTH
 IDX=1
 
@@ -59,5 +61,9 @@ for i in "월" "화" "수" "목" "금" "토" "일"; do
 
   TMP_DAY=`expr $TMP_DAY + 1`
 done
+
+chmod 755 $NEW_FILE_NAME
+
+echo "Finish~!!!!!"
 
 #echo "$DAY $NEXT_DAY"
