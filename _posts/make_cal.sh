@@ -32,7 +32,7 @@ NEW_FILE_NAME=$(date +%Y)-$(date +%m)-$(date +%d)-TIL_"$YEAR$MONTH$DAY"_"$LAST_M
 
 touch $NEW_FILE_NAME
 
-TMP_DAY=$DAY
+TMP_DAY=$(date +%-d)
 TMP_MONTH=$MONTH
 IDX=1
 
@@ -45,7 +45,7 @@ echo "---" >> $NEW_FILE_NAME
 
 for i in "월" "화" "수" "목" "금" "토" "일"; do
   if [ $TMP_DAY -gt $NOW_MONTH_DAY ]; then
-    TMP_DAY="0$IDX"
+    TMP_DAY="$IDX"
     IDX=`expr $IDX + 1`
 
     TMP_MONTH=$LAST_MONTH
