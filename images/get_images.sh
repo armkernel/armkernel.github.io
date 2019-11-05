@@ -1,3 +1,3 @@
 #!/bin/sh
 
-mv ~/Desktop/screenshot/*.png ./
+mv ~/Desktop/screenshot/* ./
