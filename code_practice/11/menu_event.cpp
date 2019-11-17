@@ -20,6 +20,7 @@ public:
 class AddStudentMenu : public MenuItem
 {
 public:
+  // menu 아이템은 생성자 인자 2개 받음. 그래서 에러가 안나게 하려면, 인자 받아서 전달해야함. 근데 귀찮아 그럴 경우 -> 생성자 상속! 
   using MenuItem::MenuItem; // 생성자 상속..
   // 기반클래스에 있으니 그거 써달라.
   virtual void doCommand() { cout << "Add Student" << endl; }  
@@ -44,3 +45,10 @@ int main()
   m1.command();
   m2.command();
 }
+
+// 첫번째 방법은 가상함수로 분리해서 새로운 파생클래스 정의 후 객체 만들어 사용하는 방법
+//
+// 이 방법을 이용한다면, 메뉴가 50개 일 경우를 생각해보자.
+// 파생클래스가 50개가 되야한다.
+//  좋은 기법은 아님.
+//
